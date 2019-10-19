@@ -2,6 +2,37 @@
 
 <html lang="en">
 <head>
+    <style type="text/css">
+    .border-button {
+  position:relative;
+  display:inline-block;
+  width:120px;
+  height:30px;
+  background-color:#F1FC93;
+  line-height:29px;
+  color:#35495e;
+  font-family:'arial';
+  text-align:center;
+  text-decoration:none;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow:hidden
+}
+.border-button:after {
+  position:absolute;
+  display:block;
+  content:"";
+  width:100%;
+  height:1px;
+  background-color:#F90303;
+  transform:scale3d(0,1,1);
+  transform-origin:left;
+  transition:transform .3s;
+}
+.border-button:hover:after {
+  transform:scale3d(1,1,1);
+}
+  </style>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Nguyen Trong Hiep</title>
   <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
@@ -55,13 +86,11 @@
   </script>
 </head>
 <body> 
-
 	<center>
-		 <div style="text-align: right;padding: 15px;"><a href="https://www.facebook.com/Pisces.Developer"><u><b>Go to my Profile</u></b></a></div>
+		 <div style="text-align: right;padding: 15px;"><a href="https://www.facebook.com/Pisces.Developer"><u><b>Facebook</u></b></a></div>
 	</center>
-  <center><div class="controls">
-    <div style="text-align: center;"><button onclick="toggleShape()">Change effects for images</button></div>
-    <div style="font-size: 50px">
+  <center>
+    <div style="font-size: 55px">
 <script type="text/javascript">
 farbbibliothek = new Array();
 farbbibliothek[0] = new Array("#FF0000","#FF1100","#FF2200","#FF3300","#FF4400","#FF5500","#FF6600","#FF7700","#FF8800","#FF9900","#FFaa00","#FFbb00","#FFcc00","#FFdd00","#FFee00","#FFff00","#FFee00","#FFdd00","#FFcc00","#FFbb00","#FFaa00","#FF9900","#FF8800","#FF7700","#FF6600","#FF5500","#FF4400","#FF3300","#FF2200","#FF1100");
@@ -76,7 +105,7 @@ farbbibliothek[8] = new Array("#FFFFFF");
 farben = farbbibliothek[4];
 function farbschrift(){for(var b=0;b<Buchstabe.length;b++){document.all["a"+b].style.color=farben[b]}farbverlauf()}function string2array(b){Buchstabe=new Array();while(farben.length<b.length){farben=farben.concat(farben)}k=0;while(k<=b.length){Buchstabe[k]=b.charAt(k);k++}}function divserzeugen(){for(var b=0;b<Buchstabe.length;b++){document.write("<span id='a"+b+"' class='a"+b+"'>"+Buchstabe[b]+"</span>")}farbschrift()}var a=1;function farbverlauf(){for(var b=0;b<farben.length;b++){farben[b-1]=farben[b]}farben[farben.length-1]=farben[-1];setTimeout("farbschrift()",30)}var farbsatz=1;function farbtauscher(){farben=farbbibliothek[farbsatz];while(farben.length<text.length){farben=farben.concat(farben)}farbsatz=Math.floor(Math.random()*(farbbibliothek.length-0.0001))}setInterval("farbtauscher()",5000);
 
-text= " ...Hello, I'm HiepSummer98... "; 
+text= "Hello, I'm HiepSummer98"; 
 string2array(text);
 divserzeugen();
 //document.write(text);
@@ -85,6 +114,12 @@ divserzeugen();
 <center><marquee align=”center” direction=”left” height=”100″ scrollamount=”2″ width=”90%”>
 <b><i> “They say as long as at least one person cares for you, life isn’t a waste. So when things go terribly wrong, and you feel like giving up, please remember you still got me.”</i></b>
 </marquee></center>
+<center><div class="controls">
+    <!-- <div style="text-align: center;"><button onclick="toggleShape()">CLICK ME</button></div> -->
+      <div style ="text-align: center;"class="controls">
+    <a class="border-button" onclick="toggleShape()">
+        <span >Change effects</span>
+    </a></center>
   </div>
   <div id="container">
     <div id="stage">
